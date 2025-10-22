@@ -4,8 +4,7 @@
   "functions": {
     "app/api/create-session/route.ts": {
       "runtime": "edge",
-      "maxDuration": 15,
-      "regions": ["iad1", "sfo1", "dub1"]
+      "maxDuration": 15
     }
   },
   "buildCommand": "npm run build",
