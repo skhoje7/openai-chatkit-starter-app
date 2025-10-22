@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "framework": "nextjs",
+  "functions": {
+    "app/api/create-session/route.ts": {
+      "runtime": "edge",
+      "maxDuration": 15,
+      "regions": ["iad1", "sfo1", "dub1"]
+    }
+  },
+  "buildCommand": "npm run build",
+  "installCommand": "npm install"
+}

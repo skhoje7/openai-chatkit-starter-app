@@ -60,6 +60,15 @@ npm run build
 
 Before deploying your app, you need to verify the domain by adding it to the [Domain allowlist](https://platform.openai.com/settings/organization/security/domain-allowlist) on your dashboard.
 
+### Deploying to Vercel
+
+1. [Create a new Vercel project](https://vercel.com/new) and import this repository. Vercel automatically detects the Next.js framework and uses the `npm install` and `npm run build` commands specified in [`vercel.json`](vercel.json).
+2. In your project settings on Vercel, add the environment variables listed in [`.env.example`](.env.example). Use the **Production**, **Preview**, and **Development** tabs if you plan to use different values per environment.
+3. Redeploy the project so the new environment variables take effect. Vercel will build and deploy the project automatically.
+4. Once the deployment is complete, add the generated domain (for example, `https://your-app.vercel.app`) to the [Domain allowlist](https://platform.openai.com/settings/organization/security/domain-allowlist) so ChatKit can load in your hosted app.
+
+> ℹ️ The [`vercel.json`](vercel.json) file configures the `app/api/create-session` endpoint to run on Vercel's Edge Runtime in regions close to your users. If you need a different region strategy, update the `regions` array to match your requirements.
+
 ## Customization Tips
 
 - Adjust starter prompts, greeting text, [chatkit theme](https://chatkit.studio/playground), and placeholder copy in [`lib/config.ts`](lib/config.ts).
